@@ -1,12 +1,403 @@
-.root {
-    --Fundoprincipal:     {color: #F8FAFC};
-    --Cards:              {color: #FFFFFF};
-    --Corprincipal:       {color: #6366F1};
-    --Corprincipalhover:  {color: #4F46E5};
-    --Textoprincipal:     {color: #0F172A};
-    --Textosecundário:    {color: #64748B};
-    --Bordas:             {color: #E2E8F0};
-    --Sucesso:            {color: #22C55E};
-    --Alerta:             {color: #F59E0B};
-    --Erroprioridadealta: {color: #ef4444};
+/* ================================
+   Taspy - Estilos globais
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #F8FAFC;
+    --surface: #FFFFFF;
+
+    --primary: #6366F1;
+    --primary-hover: #4F46E5;
+
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+
+    --border: #E2E8F0;
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--background);
+    color: var(--text-primary);
+
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* ================================
+   Container
+================================ */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* ================================
+   Header
+================================ */
+
+.header {
+    background-color: var(--surface);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    color: var(--primary);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* ================================
+   Botões
+================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+    border: 1px solid transparent;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s,
+        border-color 0.2s,
+        color 0.2s,
+        transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--surface);
+
+    color: var(--text-primary);
+
+    border-color: var(--border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--background);
+}
+
+.btn-large {
+    padding: 13px 22px;
+}
+
+
+/* ================================
+   Hero
+================================ */
+
+.hero {
+    min-height: calc(100vh - 73px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 0;
+}
+
+.hero-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 580px;
+}
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--primary);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 3.3rem;
+
+    line-height: 1.1;
+
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-text > p {
+    max-width: 520px;
+
+    margin-bottom: 32px;
+
+    color: var(--text-secondary);
+
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ================================
+   Preview Kanban
+================================ */
+
+.hero-preview {
+    width: 100%;
+}
+
+.preview-card {
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+.preview-label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.8rem;
+}
+
+.preview-header h2 {
+    font-size: 1.2rem;
+}
+
+.preview-progress {
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    background-color: var(--background);
+
+    color: var(--text-secondary);
+
+    font-size: 0.8rem;
+}
+
+
+/* ================================
+   Kanban
+================================ */
+
+.kanban-preview {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.kanban-column {
+    min-height: 180px;
+
+    padding: 12px;
+
+    background-color: var(--background);
+
+    border-radius: 10px;
+}
+
+.kanban-column h3 {
+    margin-bottom: 12px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+
+/* ================================
+   Task cards
+================================ */
+
+.task-card {
+    padding: 12px;
+
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+}
+
+.task-card p {
+    margin-top: 10px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.priority {
+    display: inline-block;
+
+    padding: 4px 7px;
+
+    border-radius: 5px;
+
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.priority-high {
+    background-color: #FEE2E2;
+    color: var(--danger);
+}
+
+.priority-medium {
+    background-color: #FEF3C7;
+    color: var(--warning);
+}
+
+.priority-low {
+    background-color: #DCFCE7;
+    color: var(--success);
+}
+
+
+/* ================================
+   Responsividade
+================================ */
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .header-content {
+        min-height: 64px;
+    }
+
+    .header-actions .btn-secondary {
+        display: none;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .kanban-preview {
+        grid-template-columns: 1fr;
+    }
+
 }
