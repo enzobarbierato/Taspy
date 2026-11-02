@@ -1,0 +1,12 @@
+.root {
+    --Fundoprincipal:     {color: #F8FAFC};
+    --Cards:              {color: #FFFFFF};
+    --Corprincipal:       {color: #6366F1};
+    --Corprincipalhover:  {color: #4F46E5};
+    --Textoprincipal:     {color: #0F172A};
+    --Textosecundário:    {color: #64748B};
+    --Bordas:             {color: #E2E8F0};
+    --Sucesso:            {color: #22C55E};
+    --Alerta:             {color: #F59E0B};
+    --Erroprioridadealta: {color: #ef4444};
+}
